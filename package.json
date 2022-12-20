@@ -1,0 +1,22 @@
+{
+  "name": "first-ang-app",
+  "version": "1.0.0",
+  "description": "follow along the freecodecamp.org angular for beginners ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/veistudent/ang11Tut.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/veistudent/ang11Tut/issues"
+  },
+  "homepage": "https://github.com/veistudent/ang11Tut#readme",
+  "devDependencies": {
+    "typescript": "^4.9.4"
+  }
+}
