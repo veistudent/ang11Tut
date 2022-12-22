@@ -6,3 +6,9 @@ console.log(`\nHowever, if we re-assing the var lname (which is of type '${typeo
 lname = 'wolverine';
 lname = lname.charAt(0).toUpperCase() + lname.substring(1).toLowerCase();
 console.log(`\nNow, we renamed 'lname' to: '${lname}' (and we made it proper upper case)`);
+console.log(fullName('Jo', lname));
+
+
+function fullName(s1: string, s2: string) :string {
+    return `full name: ${s2}, ${s1}`;
+}
