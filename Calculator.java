@@ -58,6 +58,7 @@ public class Calculator {
         double taxRate = TaxRate(state);
         double valueAfterDiscount = value - discount;
         double taxAmount = valueAfterDiscount * taxRate;
+        System.out.printf("The tax amount is: %f\n", taxAmount);
         return taxAmount;
     }
 
@@ -70,7 +71,7 @@ public class Calculator {
         } else if (value >= 1000) {
             discount = value * 0.03;
         }
-        
+        System.out.println("The discount is: " + discount);
         return discount;
     }
 
@@ -90,6 +91,7 @@ public class Calculator {
             default:
                 rate = 0.045;
         }
+        
         return rate;
     }
 }

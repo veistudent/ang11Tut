@@ -7,12 +7,15 @@ import { Address } from './interface';
  * 
  */
 class Employee implements Address {
+    
+    /** adding properties */ 
     // this is the syntax when a constructor is provided
+    // if a constructor is provided (manually added: known as 'parameterized' constructor), then there should be a '!' after the name of the variable property
     id: number;
     first: string;
     address: Address;
 
-    // if the constructor is implicit, then each member variable would use this syntax:
+    // if the constructor is implicit (not manually entered), then each member variable would use this syntax:
     // id!: number;
     // first!: string;
     // last!: string;
