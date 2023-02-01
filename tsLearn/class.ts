@@ -14,7 +14,7 @@ class Employee implements Address {
     private id: number;     /**the private keyword was replaced by the hash tag '#' in JS and Angular 11 onward */
     // # is the native manner to create private variables in JS
     first: string;
-    address: Address;
+    address: {street: string, zip: number};
 
     /*********************************************************** */
     // if the constructor is implicit (not manually entered), then each member variable would use this syntax:
@@ -77,7 +77,7 @@ console.log(`using the interface, we call the method in the Employee class: ${Jo
 class Manager extends Employee implements UserEmployee {
     
     name: string;
-    age?: number | undefined;
+    age?: number | undefined; /**' | undefined ' allows for a */
     id: number;
     email: string;
     salary: number;

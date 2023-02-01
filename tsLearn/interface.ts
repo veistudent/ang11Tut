@@ -11,6 +11,9 @@ export interface User {
 } 
 
 //this is how an interface may be extended.
+// extending an interface adds variables and methods to any interface class
+// here, this extension adds an attribute to the class User and any new
+// objects made with the class 'UserEmployee' will have the properties of User and UserEmployee
 export interface UserEmployee extends User {
     salary: number;
 }
@@ -23,7 +26,6 @@ export interface Address {
     zip: number;
 }
 
-console.log();
 
 // yet another interface that contains a built-in method returning a type of another interface
 interface Login {
@@ -37,6 +39,8 @@ let testUserInter: User = {
     id: 2345,
     email: "moe@gmail.com"
 }
+
+console.log();
 
 console.log(`the type of the instance variable 'testUserInter is ${typeof testUserInter}`);
 
@@ -52,10 +56,22 @@ let extendedInterfaceUser: UserEmployee = {
 console.log(`the age of extendedInterfaceUser is ${extendedInterfaceUser.age}`);
 
 //this is an array that uses the interface as its type class
-let users: UserEmployee[] = [
-    {name: "John", id: 2347, email: "ab@gmail.com", salary: 150000},
-    {name: "Wick", age: 45, id: 2348, email: "Jwick@gmail.com", salary: 160000},
-    {name: "Ron", id: 2349, email: "ron@gmail.com", salary: 170000}
-
+let [John, Wick, ...users]: UserEmployee[] = [
+    {name: "John", id: 2347, email: "ab@gmail.com", salary: 190000},
+    {name: "Wick", age: 45, id: 2348, email: "Jwick@gmail.com", salary: 195000},
+    {name: "Ron", id: 2349, email: "ron@gmail.com", salary: 170000},
+    {name: "Hermanie", id: 3490, email: "her@gmail.com", salary: 170000},
+    {name: "Pick", id: 4901, email: "pick@gmail.com", salary: 185000}
 ];
-console.log(`the type for user named 'users' is ${typeof users}`);
+// console.log(`the user named 'John' is ${John} and has a type of ${typeof John}`);
+console.log(John);
+// console.log(`the user named 'Wick' is ${Wick}`);
+console.log(Wick);
+// console.log(`the rest of the users are stored in an array of type ${typeof users} \n whose val is:\n${users}`);
+console.log(users);
+
+
+// to filter a value from an array
+let filterBySalaryGreater100k = users.filter(user => user.salary > 100000);
+console.log('users from \'users\' who earn more than 100k:');
+console.log(filterBySalaryGreater100k);
