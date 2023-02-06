@@ -18,5 +18,8 @@
   "homepage": "https://github.com/veistudent/ang11Tut#readme",
   "devDependencies": {
     "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@angular/cli": "^15.1.3"
   }
 }
