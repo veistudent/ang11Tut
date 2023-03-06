@@ -1,7 +1,16 @@
-<h2>Welcome to {{nameOfHotel}} as this component {{title}}</h2>
-<p>rooms works! yeah and if it shows, then it works.</p>
-<br>
-<p>More importantly, the app-rooms html custom tag is placed in the app.components.html file wherever we want the component to render.</p>
-<br>
-<p>and now, a random number: {{anyRandomNum}}</p>
-<br>
+
+<div *ngIf="hideBodyBool">           <!-- the name of the property/variable is written here -->
+    <p>The html file contains an example of interpolation (where the property is inside double curly brackets</p>
+    <h2>Welcome to {{nameOfHotel}} as {{titleOfComponent}}</h2>     <!-- this is an example of interpolation -->
+    <p>rooms works! yeah and if it shows, then it works.</p>
+    <br>
+    <p>More importantly, the app-rooms html custom tag is placed in the app.components.html file wherever we want the component to render.</p>
+    <br>
+    <p>and now, a random number: {{anyRandomNum}}</p>
+    <br>
+    <br> <!-- below is an example of property binding -->
+    <p>The number of rooms is retrieved via property binding to display onto the screen: </p>
+    <div [innerText]="numberOfRooms"></div>
+    <p>The value of the property is retrieved from the source file and injected into the div as its text</p>
+</div>
+<button (click)="hideBody()">Hide body (using event binging)</button>   <!-- the method is written here -->
