@@ -9,8 +9,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '\'this is my hotelInv\'';
+  hideSmoke: boolean = true;
+
+  // if we want to switch between a user and an admin account
+  loginType = 'Admin';
 
   constructor() {};
   ngOnInit(): void {};
+
+  toggleSmoke(): void {
+    this.hideSmoke = !this.hideSmoke;
+  }
 }
  

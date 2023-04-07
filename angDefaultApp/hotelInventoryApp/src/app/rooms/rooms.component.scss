@@ -1,0 +1,22 @@
+.button, .decreaseButton:hover, .increaseButton:hover {
+    border-radius: 4px;
+    // background-color: #ffd373;
+    // border: 0 0 0 3px #0c7ab2;
+    border: 0 0 0 3px red;
+}
+
+.decreaseButton {
+    background-color: #d6b71c;
+}
+
+.increaseButton {
+    background-color: rgb(174, 236, 80);
+}
+
+.even {
+    background-color: lightblue;
+}
+
+.odd {
+    background-color: beige;
+}

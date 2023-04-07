@@ -1,16 +1,45 @@
 
 <div *ngIf="hideBodyBool">           <!-- the name of the property/variable is written here -->
-    <p>The html file contains an example of interpolation (where the property is inside double curly brackets</p>
+    <p>The html file contains an example of interpolation (where the property is inside double curly brackets) </p>
     <h2>Welcome to {{nameOfHotel}} as {{titleOfComponent}}</h2>     <!-- this is an example of interpolation -->
-    <p>rooms works! yeah and if it shows, then it works.</p>
+    <p>Wanna retrieve fibonacci numbers? Yes!</p>
     <br>
-    <p>More importantly, the app-rooms html custom tag is placed in the app.components.html file wherever we want the component to render.</p>
+    <p>Now, we want to increase or decrease rooms:</p>
+    <button class="button increaseButton" (click)="increaseRooms()" [disabled]="DisableAdd()" >increase rooms</button>
+    <br><br>
+    <button class="button decreaseButton" (click)="decreaseRooms()" [disabled]="DisableRemove()">decrease rooms</button>
+    <p>The new number of rooms is: {{ rooms.bookedRooms }} </p>
+    <br><br>
+    <button class="button" (click)="toggleTable()">Show Table</button>
     <br>
-    <p>and now, a random number: {{anyRandomNum}}</p>
+
+    <table *ngIf="!displayTable">
+        <p>Since there are rooms available, the table below displays. <br></p>
+        <tr>
+            <th>Index</th>
+            <th>Even or Odd</th>
+            <th>Room Number</th>
+            <th>Room Type </th>
+            <th>Room Price </th>
+            <th>Room Amenities </th>
+            <th>Room CheckIn Time </th>
+        </tr>
+        <tr 
+            [ngClass]="e ? 'even' : 'odd'"
+            *ngFor="let room of roomList; let e=even; let o=odd, let i=index">
+                <td>{{i}}</td>
+                <td>{{e ? 'even' : 'odd'}}</td>
+                <td>{{room.roomNumber}}</td>
+                <td>{{room.roomType}}</td>
+                <td>{{room.price | currency }}</td>
+                <td>{{room.amenities}}</td>
+                <td>{{room.checkInTime | date:'MM/dd/yyyy' }}</td>
+        </tr>
+    </table>
     <br>
-    <br> <!-- below is an example of property binding -->
-    <p>The number of rooms is retrieved via property binding to display onto the screen: </p>
-    <div [innerText]="numberOfRooms"></div>
-    <p>The value of the property is retrieved from the source file and injected into the div as its text</p>
+
+
+    <!-- <div [innerText]="numberOfRooms"></div> -->
+    <!-- <p>The value of the property is retrieved from the source file and injected into the div as its text</p> -->
 </div>
 <button (click)="hideBody()">Hide body (using event binging)</button>   <!-- the method is written here -->
