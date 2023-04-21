@@ -13,7 +13,13 @@
     <button class="button" (click)="toggleTable()">Show Table</button>
     <br>
 
-    <table *ngIf="!displayTable">
+    <!-- <div *ngIf="rooms.availableRooms > 0"> -->
+    <div *ngIf="displayTable && rooms.availableRooms > 3">
+        <rooms-list [rooms]="roomList" (selectedRoom)="selectRoom($event)" ></rooms-list>
+        <!-- <rooms-list [rooms]="roomList"></rooms-list> -->
+
+    </div>
+    <!-- <table *ngIf="!displayTable">
         <p>Since there are rooms available, the table below displays. <br></p>
         <tr>
             <th>Index</th>
@@ -35,7 +41,7 @@
                 <td>{{room.amenities}}</td>
                 <td>{{room.checkInTime | date:'MM/dd/yyyy' }}</td>
         </tr>
-    </table>
+    </table> -->
     <br>
 
 

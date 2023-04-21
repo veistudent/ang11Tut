@@ -16,14 +16,14 @@ export class RoomsComponent implements OnInit{    /**OnInit allows the applicati
   fibNums:number[] = [0,1];
   fibSum:number = 1;
 
-  displayTable:boolean = false;
+  displayTable:boolean = true;
 
   /**3:28 --> we are now using directives to mod the DOM */
   /**and we create a new var of type of the interface */
   rooms: Room = {
     totalRooms:20,
-    availableRooms: 8,
-    bookedRooms: 11,
+    availableRooms: 3,
+    bookedRooms: 16,
     unavailable: 1
   };
 
@@ -58,7 +58,7 @@ export class RoomsComponent implements OnInit{    /**OnInit allows the applicati
   ];
 
   public constructor() {}
-  public ngOnInit(): void {}   /**ngOnInit is a method that returns type void (nothing) */
+  public ngOnInit(): void {}   /**ngOnInit initiates the component*/
 
   public hideBody() {
     this.hideBodyBool = !this.hideBodyBool;
@@ -124,8 +124,14 @@ export class RoomsComponent implements OnInit{    /**OnInit allows the applicati
   return sumLastTwo;
  }
 
- public toggleTable():void {
+ toggleTable(): void {
 	this.displayTable = !this.displayTable;
+  console.log(`hahaha this is the displayTable var: ${this.displayTable}`);
+  // return this.displayTable;
+ }
+
+ selectRoom(room: RoomList) {
+  console.log(`the room is: ${JSON.stringify(room)}`);
  }
 
 }

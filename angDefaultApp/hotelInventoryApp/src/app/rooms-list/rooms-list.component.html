@@ -1,1 +1,37 @@
 <p>rooms-list works!</p>
+<br><br>
+<!-- <table *ngIf="!displayTable"> -->
+<table >
+    <p>Since there are rooms available, the table below displays. <br></p>
+    <tr>
+        <th>Index</th>
+        <th>Even or Odd</th>
+        <th>Room Number</th>
+        <th>Room Type </th>
+        <th>Room Price </th>
+        <th>Room Amenities </th>
+        <th>Room CheckIn Time </th>
+        <th>Select Room </th>
+    </tr>
+    <!-- *ngFor="let room of roomList; let e=even; let o=odd, let i=index">   replaces line 18      -->
+    <tr 
+        [ngClass]="e ? 'even' : 'odd'"
+        *ngFor="let room of rooms; let e=even; let o=odd, let i=index">
+            <td>{{i}}</td>
+            <td>{{e ? 'even' : 'odd'}}</td>
+            <td>{{room.roomNumber}}</td>
+            <td>{{room.roomType}}</td>
+            <td>{{room.price | currency }}</td>
+            <td>{{room.amenities}}</td>
+            <td>{{room.checkInTime | date:'MM/dd/yyyy' }}</td>
+            <td>
+                <!-- after adding an output eventemitter in the component.ts file, we want to add a button
+                here (to the table) that receives as a param the item to be manipulated by the parent.
+                We embed a button whose event / click calls the method we defined in the component.ts file.
+                The param of the click is the same object being iterated and called in the *ngFor loop -->
+                <button class="btn btn-primary" (click)="selectRoom(room)">
+                    Select
+                </button>
+            </td>
+    </tr>
+</table>
