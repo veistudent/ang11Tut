@@ -17,6 +17,7 @@ export class RoomsComponent implements OnInit{    /**OnInit allows the applicati
   fibSum:number = 1;
 
   displayTable:boolean = true;
+  selectedRoom!: RoomList;
 
   /**3:28 --> we are now using directives to mod the DOM */
   /**and we create a new var of type of the interface */
@@ -131,7 +132,8 @@ export class RoomsComponent implements OnInit{    /**OnInit allows the applicati
  }
 
  selectRoom(room: RoomList) {
-  console.log(`the room is: ${JSON.stringify(room)}`);
+  // console.log(`the room is: ${JSON.stringify(room)}`);
+  this.selectedRoom = room;
  }
 
 }

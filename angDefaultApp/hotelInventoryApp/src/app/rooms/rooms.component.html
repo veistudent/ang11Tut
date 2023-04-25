@@ -13,10 +13,22 @@
     <button class="button" (click)="toggleTable()">Show Table</button>
     <br>
 
+    <br>
+    <!-- this block came after the dispayTable && rooms.availability div below -->
+    <div *ngIf="selectedRoom">
+        <p>if we click a button next to each of the rooms table below, the clicked room 
+            <br>
+            will show here as the event(ed) room:
+            <br> 
+            {{selectedRoom | json}}
+        </p>
+    </div>
+    <br>
+
     <!-- <div *ngIf="rooms.availableRooms > 0"> -->
-    <div *ngIf="displayTable && rooms.availableRooms > 3">
+    <div *ngIf="displayTable && rooms.availableRooms >= 3">
         <rooms-list [rooms]="roomList" (selectedRoom)="selectRoom($event)" ></rooms-list>
-        <!-- <rooms-list [rooms]="roomList"></rooms-list> -->
+        <!-- <rooms-list [rooms]="roomList"></rooms-list> --> <!-- prev version that passed only the rooms list  -->
 
     </div>
     <!-- <table *ngIf="!displayTable">
